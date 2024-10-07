@@ -1,8 +1,6 @@
-with open("names.txt", "r") as file:
-    lines = file.readlines()
+names = []
 
-# basic implementation would print each name on a new line
-# can either use , end="" after "line" in the print statement 
-# or use line.rstrip()
-for line in lines:
-    print("hello,", line.rstrip())
+# if opening a file to read, don't need "r" (default behavior)
+with open("names.txt") as file:
+    for line in sorted(file):
+        print("hello,", line.rstrip())
