@@ -5,5 +5,5 @@ home = input("Where's your home? ")
 
 # append mode
 with open("students.csv", "a") as file:
-    writer = csv.writer(file)
-    writer.writerow([name, home])
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])
+    writer.writerow({"name": name, "home": home})
